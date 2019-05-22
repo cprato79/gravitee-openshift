@@ -8,6 +8,8 @@ spec:
  accessModes:
   - ReadWriteOnce
  storageClassName: slow
- nfs:
-   server: 10.5.18.122
-   path: /var/nfs-data/pv0001
+ hostPath:
+  path: /opt/openshift_pv/pv0001
+# nfs:
+#   server: 10.5.18.122
+#   path: /var/nfs-data/pv0001
