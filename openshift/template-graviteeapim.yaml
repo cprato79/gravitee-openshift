@@ -471,7 +471,7 @@ parameters:
     required: true 
   - name: GRAVITEE_VERSION 
     description: Verion of gravitee to deploy
-    value: 1.10.4
+    value: 1.26.0
     required: true 
   - name: OPENSHIFT_SUFFIXE
     description: Base of web access for openshift 
