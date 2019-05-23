@@ -475,7 +475,7 @@ parameters:
     required: true 
   - name: OPENSHIFT_SUFFIXE
     description: Base of web access for openshift 
-    value: minishift.local
+    value: 10.5.18.122.nip.io
     required: true
   - name: STORAGE_ELASTIC
     description: Gi storage for elasticsearch 
