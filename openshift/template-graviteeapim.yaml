@@ -93,7 +93,7 @@ objects:
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
           - name: GRAVITEEIO_ELASTIC_PORT
-            value: 9200
+            value: "9200"
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           image: ${NAMESPACE}/gateway:${GRAVITEE_VERSION}
@@ -156,7 +156,7 @@ objects:
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
           - name: GRAVITEEIO_ELASTIC_PORT
-            value: 9200
+            value: "9200"
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           - name: GIO_MIN_MEM
