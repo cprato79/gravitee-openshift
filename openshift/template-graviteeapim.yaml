@@ -39,6 +39,8 @@ objects:
           ports:
           - containerPort: 9300
             protocol: TCP
+          - containerPort: 9200
+            protocol: TCP
           resources: {}
           terminationMessagePath: /dev/termination-log
           volumeMounts:
@@ -90,6 +92,8 @@ objects:
         - env:
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
+          - name: GRAVITEEIO_ELASTIC_PORT
+            value: 9200
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           image: ${NAMESPACE}/gateway:${GRAVITEE_VERSION}
@@ -151,6 +155,8 @@ objects:
         - env:
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
+          - name: GRAVITEEIO_ELASTIC_PORT
+            value: 9200
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           - name: GIO_MIN_MEM
@@ -310,6 +316,10 @@ objects:
       port: 9300
       protocol: TCP
       targetPort: 9300
+    - name: 9200-tcp
+      port: 9200
+      protocol: TCP
+      targetPort: 9200
     selector:
       deploymentconfig: elasticsearch
     sessionAffinity: None
@@ -470,7 +480,7 @@ parameters:
     value: gravitee
     required: true 
   - name: GRAVITEE_VERSION 
-    description: Verion of gravitee to deploy
+    description: Version of gravitee to deploy
     value: 1.26.0
     required: true 
   - name: OPENSHIFT_SUFFIXE
