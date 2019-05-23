@@ -16,7 +16,11 @@ oc project gravitee
 oc adm policy add-scc-to-user anyuid -z gravitee
 
 oc login -u developer -p developer
-oc project gravitee
+#oc project gravitee
+
+# get images
+#oc import-image nginx:1.10.2-alpine --confirm
+#oc import-image graviteeio/java:8 --confirm
 
 # set GRAVITEEIO_VERSION=1.10.4
 export GRAVITEEIO_VERSION=1.26.0
@@ -39,9 +43,10 @@ add_secret_opt
 
 # gateway
 oc new-build ../ --name=gateway --context-dir=images/gateway/ --strategy=docker $GIT_SECRET_OPT --build-arg=GRAVITEEIO_VERSION=$GRAVITEEIO_VERSION
-#oc start-build gateway --from-dir ../images/gateway/ --build-arg=GRAVITEEIO_VERSION=$GRAVITEEIO_VERSION
+#oc start-build gateway --wait --from-dir ../images/gateway/ --build-arg=GRAVITEEIO_VERSION=$GRAVITEEIO_VERSION
 oc start-build gateway --wait
 oc tag gateway:latest gateway:$GRAVITEEIO_VERSION
+
 
 # management-api
 oc new-build ../ --name=management-api --context-dir=images/management-api/ --strategy=docker $GIT_SECRET_OPT --build-arg=GRAVITEEIO_VERSION=$GRAVITEEIO_VERSION
