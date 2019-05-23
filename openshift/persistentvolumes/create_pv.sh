@@ -1,6 +1,6 @@
 #!/bin/bash
 
-oc login -u system:admin
+oc login -u admin
 oc delete pv pv0001 pv0002
 
 oc create -f persistentvolumes/pv0001.yaml
