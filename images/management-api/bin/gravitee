@@ -124,6 +124,8 @@ if [ -z "$daemon" ] ; then
 	exec "$JAVA" $JAVA_OPTS \
         -cp "$GRAVITEE_BOOT_CLASSPATH" \
         -Dgravitee.home=$GRAVITEE_HOME \
+        -Dgravitee.ds.elastic.host=elastic \
+        -Dgravitee.ds.elastic.port=9000 \
         -Dvertx.disableFileCaching=true \
         -Dvertx.disableFileCPResolving=true \
         -Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.SLF4JLogDelegateFactory \
@@ -146,6 +148,8 @@ else
 	exec "$JAVA" $JAVA_OPTS \
         -cp "$GRAVITEE_BOOT_CLASSPATH" \
         -Dgravitee.home=$GRAVITEE_HOME \
+        -Dgravitee.ds.elastic.host=elastic \
+        -Dgravitee.ds.elastic.port=9000 \
         -Dvertx.disableFileCaching=true \
         -Dvertx.disableFileCPResolving=true \
         -Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.SLF4JLogDelegateFactory \
