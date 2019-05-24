@@ -33,7 +33,7 @@ objects:
           deploymentconfig: elasticsearch
       spec:
         containers:
-        - image: elasticsearch:2
+        - image: elasticsearch:5.6.16
           imagePullPolicy: IfNotPresent
           name: elasticsearch
           ports:
@@ -92,8 +92,8 @@ objects:
         - env:
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
-          - name: GRAVITEEIO_ELASTIC_PORT
-            value: "9200"
+          - name: GRAVITEE_REPORTERS_ELASTICSEARCH_ENDPOINTS_0
+            value: http://elasticsearch:9200
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           image: ${NAMESPACE}/gateway:${GRAVITEE_VERSION}
@@ -155,8 +155,8 @@ objects:
         - env:
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
-          - name: GRAVITEEIO_ELASTIC_PORT
-            value: "9200"
+          - name: GRAVITEE_ANALYTICS_ELASTICSEARCH_ENDPOINTS_0
+            value: http://elasticsearch:9200
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           - name: GIO_MIN_MEM
