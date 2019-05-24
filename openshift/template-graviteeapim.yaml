@@ -98,8 +98,6 @@ objects:
             value: "http://elasticsearch:9200"
           - name: GRAVITEE_PLUGINS_PATH_0
             value: "$${gravitee.home}/plugins"
-          - name: GRAVITEE_PLUGINS_PATH_1
-            value: "$${gravitee.home}/plugins-ext"
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
           - name: GRAVITEEIO_MONGODB_HOST
@@ -171,8 +169,8 @@ objects:
             value: "false"
           - name: GRAVITEE_PLUGINS_PATH_0
             value: "$${gravitee.home}/plugins"
-          - name: GRAVITEE_PLUGINS_PATH_1
-            value: "$${gravitee.home}/plugins-ext"
+#          - name: GRAVITEE_PLUGINS_PATH_1
+#            value: "$${gravitee.home}/plugins-ext"
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
           - name: GRAVITEEIO_MONGODB_HOST
