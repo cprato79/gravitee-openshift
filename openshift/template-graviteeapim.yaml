@@ -102,8 +102,6 @@ objects:
             value: "$${gravitee.home}/plugins-ext"
           - name: GRAVITEEIO_ELASTIC_HOST
             value: elasticsearch
-          - name: GRAVITEE_REPORTERS_ELASTICSEARCH_ENDPOINTS_0
-            value: http://elasticsearch:9200
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           image: ${NAMESPACE}/gateway:${GRAVITEE_VERSION}
@@ -170,7 +168,7 @@ objects:
           - name: GRAVITEE_ANALYTICS_ELASTICSEARCH_ENDPOINTS_0
             value: "http://elasticsearch:9200"
           - name: GRAVITEE_USER_LOGIN_DEFAULTAPPLICATION
-            value: false
+            value: "false"
           - name: GRAVITEE_PLUGINS_PATH_0
             value: "$${gravitee.home}/plugins"
           - name: GRAVITEE_PLUGINS_PATH_1
