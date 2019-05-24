@@ -153,10 +153,22 @@ objects:
       spec:
         containers:
         - env:
-          - name: GRAVITEEIO_ELASTIC_HOST
-            value: elasticsearch
           - name: GRAVITEE_ANALYTICS_ELASTICSEARCH_ENDPOINTS_0
             value: http://elasticsearch:9200
+          - name: GRAVITEE_MANAGEMENT_MONGODB_URI
+            value: mongodb://mongodb:27017/gravitee?serverSelectionTimeoutMS=5000&connectTimeoutMS=5000&socketTimeoutMS=5000
+          - name: GRAVITEE_RATELIMIT_MONGODB_URI
+            value: mongodb://mongodb:27017/gravitee?serverSelectionTimeoutMS=5000&connectTimeoutMS=5000&socketTimeoutMS=5000
+          - name: GRAVITEE_ANALYTICS_ELASTICSEARCH_ENDPOINTS_0
+            value: http://elasticsearch:9200
+          - name: GRAVITEE_USER_LOGIN_DEFAULTAPPLICATION
+            value: false
+          - name: GRAVITEE_PLUGINS_PATH_0
+            value: $${gravitee.home}/plugins
+          - name: GRAVITEE_PLUGINS_PATH_1
+            value: $${gravitee.home}/plugins-ext
+          - name: GRAVITEEIO_ELASTIC_HOST
+            value: elasticsearch
           - name: GRAVITEEIO_MONGODB_HOST
             value: mongodb
           - name: GIO_MIN_MEM
