@@ -27,7 +27,7 @@ ENV GRAVITEEIO_HOME /opt/graviteeio-management-api
 WORKDIR ${GRAVITEEIO_HOME}
 
 COPY config/gravitee.yml ${GRAVITEEIO_HOME}/config/
-COPY bin/gravitee ${GRAVITEEIO_HOME}/bin/
+#COPY bin/gravitee ${GRAVITEEIO_HOME}/bin/
 
 ENV GRAVITEEIO_MONGODB_HOST mongodb
 ENV GRAVITEEIO_MONGODB_PORT 27017

@@ -1,5 +1,5 @@
 # gravitee-OpenShift
-https://github.com/cprato79/gravitee-openshift
+Th original project: https://github.com/cprato79/gravitee-openshift
 
 Fork from official: https://github.com/gravitee-io/gravitee-openshift
 
@@ -17,12 +17,12 @@ and the following dependecies:
   - 5.x
 
 ### elastisearch:
-  * 9200 => REST request
-  * 9300 => HTTP request
+  * 9200 => for REST request
+  * 9300 => for nodes communication
 
 ### docker images:
 
-commands shortcut:
+commands shortcut example:
 
 ```
 oc rsync --exclude=* --include="gravitee.yml" gateway-1-86gfd:/opt/graviteeio-gateway/config/ ./config/
@@ -68,7 +68,7 @@ before proceed to create all the openshift objects it sets the properties by ENV
 ```
 
 ## Web Interface for Gravitee
-http://managementui-gravitee.10.5.18.122.nip.io/#!/
+http://managementui-gravitee.<openshift_proxy_ip_address>.nip.io/#!/
 admin/admin
 
 
