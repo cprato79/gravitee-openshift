@@ -1,7 +1,4 @@
 # gravitee-OpenShift
-https://github.com/cprato79/gravitee-openshift
-
-Fork from official: https://github.com/gravitee-io/gravitee-openshift
 
 ## Description
 
@@ -20,20 +17,12 @@ and the following dependecies:
   * 9200 => REST request
   * 9300 => HTTP request
 
-### docker images:
-
-commands shortcut:
-
-```
-oc rsync --exclude=* --include="gravitee.yml" gateway-1-86gfd:/opt/graviteeio-gateway/config/ ./config/
-```
-
 ## gateway
 Import the images on openshift registry:
   - `docker.io/graviteeio/gateway:latest`
   - `oc import-image graviteeio/gateway:latest --confirm`
 
-before proceed to create all the openshift objects it sets the properties by ENV section of Deployment Config on Opneshift template: ""
+before proceed to create all the openshift objects it sets the properties by ENV section of Deployment Config on Openshift template: ""
 
 ```
 - name: GRAVITEE_MANAGEMENT_MONGODB_URI
@@ -68,14 +57,19 @@ before proceed to create all the openshift objects it sets the properties by ENV
 ```
 
 ## Web Interface for Gravitee
+
 http://managementui-gravitee.10.5.18.122.nip.io/#!/
 admin/admin
 
+remember to update the url `10.5.18.122.nip.io` to reach from outside the cluster on the following files:
+  * images/management-ui/html/constants.json
+  * images/management-ui/Dockerfile
 
 # Setup on OpenShift
 
-- run the script: `openshift/template-graviteeapim.yaml` as openshift system:admin user
-- issue to fix:
+ * the script: `openshift/create_all.sh` creates all objects
+ * the script: `openshift/template-graviteeapim.yaml` as openshift system:admin user is automatically used to create all needed openshift objects
+
+#### issue to fix:
  - oc tag images...
- - java:8
- - nginx:latest
+ - extract in ENV the version of packages (java, nginx, others)
